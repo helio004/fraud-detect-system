@@ -31,12 +31,20 @@ git clone https://github.com/helio004/fraud-detect-system.git
 cd fraud-detect-system
 ```
 
-# Executando o Deploy
+# Executando o Deploy Pipeline no Airflow
 
-Para executar o deploy do projeto, utilizer o comando:
+Para executar o deploy do pipeline de treinamento, utilizer o comando:
 
 ```bash
-make up
+make run-pipeline
+```
+
+# Executando o Deploy
+
+Para executar o deploy da API, utilizer o comando:
+
+```bash
+make run-api
 ```
 
 Este comando ira construir e iniciar os contêineres Docker definidos no `docker-compose.yml`
@@ -71,7 +79,7 @@ Após a conclusão do pipeline de treinamento, você pode acessar o modelo trein
 # Destruindo os Contêineres
 
 ```bash
-make down
+make clean-env
 ```
 
 Este projeto é licenciado sob os termos da [Licença MIT](./LICENSE)

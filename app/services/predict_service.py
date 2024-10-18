@@ -8,6 +8,8 @@ prediction_router = APIRouter(
     tags=["prediction-service"],
 )
 
+model_loader = ModelLoader(model_path="model")
+
 
 @prediction_router.post(
     path='/fraud_detection/',
@@ -36,13 +38,6 @@ async def fraud_detection(features: RequestModel) -> ResponseModel:
     Retorna um objeto contendo um valor booleano que indica se a transação 
     é considerada fraudulenta.
     """
-
-    # TODO: Trabalhar uma forma de carregar o modelo na inicialização
-    #       Ou cachear o carregamento do modelo. Pois como um modelo
-    #       que em produção receberar varias requisições pode gerar
-    #       sobrecarga de memoria.
-    model_loader = ModelLoader(model_path="model")
-
     if model_loader.model is None:
         raise HTTPException(
             status_code=404, detail="Modelo não carregado e/ou não existente")
