@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from catboost import CatBoostClassifier
+from core.models import ResponseModel
 
 
 class ModelLoader:
@@ -20,4 +21,8 @@ class ModelLoader:
     def predict_is_fraud(self, features):
         features = pd.DataFrame([features.dict()])
         fraud_pred = self.model.predict(features)
-        return True if fraud_pred == 1 else False
+
+        return ResponseModel(
+            is_fraud=True if fraud_pred == 1 else False,
+            probability=round(self.model.predict_proba(features)[:, 1][0], 4)
+        )

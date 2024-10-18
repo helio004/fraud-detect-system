@@ -15,3 +15,4 @@ class RequestModel(BaseModel):
 
 class ResponseModel(BaseModel):
     is_fraud: bool = Field(..., example=True)
+    probability: float = Field(..., example=0.90)

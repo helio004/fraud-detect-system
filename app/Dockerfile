@@ -4,10 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-ENV MODEL_PATH "models/fraud_detection"
-
 RUN pip install -r requirements.txt
-RUN mkdir -p $MODEL_PATH
 
 COPY ./ .
 

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from core.modelops import ModelLoader
-from services.models import RequestModel, ResponseModel
+from core.models import RequestModel, ResponseModel
 from services.responses import responses
 
 
@@ -15,10 +15,6 @@ model_loader = ModelLoader(model_path="model")
     path='/fraud_detection/',
     response_model=ResponseModel,
     summary="Detecta Fraude em Transações",
-    description="""
-        Este endpoint recebe as características de uma transação e 
-        retorna se ela é considerada fraudulenta pelo modelo.
-    """,
     responses=responses
 )
 async def fraud_detection(features: RequestModel) -> ResponseModel:
@@ -42,5 +38,4 @@ async def fraud_detection(features: RequestModel) -> ResponseModel:
         raise HTTPException(
             status_code=404, detail="Modelo não carregado e/ou não existente")
 
-    is_fraud = model_loader.predict_is_fraud(features)
-    return ResponseModel(is_fraud=is_fraud)
+    return model_loader.predict_is_fraud(features)

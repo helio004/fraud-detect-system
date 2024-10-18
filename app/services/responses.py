@@ -4,7 +4,8 @@ responses = {
         "content": {
             "application/json": {
                 "example": {
-                    "is_fraud": True
+                    "is_fraud": True,
+                    "probability": 0.90
                 }
             }
         },

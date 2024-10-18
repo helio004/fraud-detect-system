@@ -6,7 +6,13 @@ from services.health_service import health_router
 from services.predict_service import prediction_router
 
 
-app = FastAPI()
+app = FastAPI(
+    title="Fraud Detection API",
+    description="Descrição da API",
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/"
+)
 
 app.include_router(router=prediction_router)
 app.include_router(router=health_router)
