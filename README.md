@@ -44,7 +44,7 @@ Para executar o deploy da API, utilizer o comando:
 make run-api
 ```
 
-Este comando ira construir e iniciar os contêineres Docker definidos no `docker-compose.yml`
+Este comando ira construir e iniciar os contêineres Docker.
 
 # Acessando o Airflow
 
