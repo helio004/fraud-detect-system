@@ -12,15 +12,12 @@ Este projeto treina e coloca em produção um modelo de detecção de fraude.
 
 ## Pré-requisitos
 
-Certifique-se de ter o Docker e o Docker Compose instalados na sua máquina. Se não tiver, siga as instruções abaixo:
+Certifique-se de ter o Docker  instalado na sua máquina. Se não tiver, siga as instruções abaixo:
 
 ### Instalação do Docker
 
 - [Guia de Instalação do Docker](https://docs.docker.com/get-docker/)
 
-### Instalação do Docker Compose
-
-- [Guia de Instalação do Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Clonando o Repositório
 
