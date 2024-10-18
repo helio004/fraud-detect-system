@@ -1,6 +1,6 @@
 # Fraud Detection System
 
-Este projeto configura e executa um pipeline de dados utilizando Docker e Docker Compose. Siga as instruções abaixo para configurar e executar o projeto.
+Este projeto treina e coloca em produção um modelo de detecção de fraude.
 
 ## Arquitetura da solução em produção
 
